@@ -1,7 +1,7 @@
 version: 2.1
 
-executers:
-  docker-executer:
+executors:
+  docker-executor:
     docker:
       - image: "circleci/node:12.18.3"
 
@@ -42,7 +42,7 @@ aliases:
 
 jobs:
   build:
-    executer: docker-executer
+    executor: docker-executor
     steps:
       - checkout
       - *show-current-branch-name
@@ -51,7 +51,7 @@ jobs:
       - *save-cache
 
   deploy-to-aws-s3:
-    executer: docker-executer
+    executor: docker-executor
     steps:
       - checkout
       - *show-current-branch-name
@@ -71,7 +71,7 @@ jobs:
             fi
 
   deploy-to-aws-cloudfront:
-    executer: docker-executer
+    executor: docker-executor
     steps:
       - checkout
       - *show-current-branch-name
