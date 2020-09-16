@@ -8,7 +8,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <div className="App">
-        <h1>Redux has been hooked.</h1>
+        <h1>React Redux Setup</h1>
       </div>
     </Provider>
   );
